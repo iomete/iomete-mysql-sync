@@ -1,5 +1,5 @@
 docker_image := iomete/iomete_mysql_sync
-docker_tag := 1.1.0
+docker_tag := 2.0.0
 
 test:
 	pytest --capture=no --log-cli-level=DEBUG
