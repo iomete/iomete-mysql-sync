@@ -44,14 +44,12 @@ class ApplicationConfig:
 def get_config(application_config_path) -> ApplicationConfig:
     config = ConfigFactory.parse_file(application_config_path)
 
-    source_connection = None
-    if config['source_connection']['type'] == 'mysql':
-        source_connection = MySQLConnection(
-            host=config['source_connection']['host'],
-            port=config['source_connection']['port'],
-            user_name=config['source_connection']['username'],
-            user_pass=config['source_connection']['password']
-        )
+    source_connection = MySQLConnection(
+        host=config['source_connection']['host'],
+        port=config['source_connection']['port'],
+        user_name=config['source_connection']['username'],
+        user_pass=config['source_connection']['password']
+    )
 
     def parse_sync_config(sync_config):
         sync_mode = None
