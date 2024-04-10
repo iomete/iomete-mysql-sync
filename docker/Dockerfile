@@ -1,4 +1,4 @@
-FROM iomete/spark-py:3.3.3-latest
+FROM iomete/spark-py:3.5.1
 
 WORKDIR "/app"
 
