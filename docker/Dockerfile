@@ -1,4 +1,4 @@
-FROM iomete/spark-py:3.5.1
+FROM iomete.azurecr.io/iomete/spark-py:3.5.3-v10
 
 WORKDIR "/app"
 
@@ -9,7 +9,7 @@ USER 0
 COPY ../setup.py setup.cfg driver.py ./
 COPY ../iomete_mysql_sync ./iomete_mysql_sync
 
-RUN pip install .
+RUN pip install . --break-system-packages
 
 # Specify the User that the actual main process will run as
 ARG spark_uid=185

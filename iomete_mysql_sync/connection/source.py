@@ -21,7 +21,7 @@ class SourceConnection:
 
     def proxy_table_definition(self, source_schema, source_table, proxy_table_name):
         return f"""
-            CREATE TABLE IF NOT EXISTS {proxy_table_name}
+            CREATE TEMPORARY TABLE {proxy_table_name}
             USING org.apache.spark.sql.jdbc
             OPTIONS (
               url '{self.jdbc_url(source_schema)}',

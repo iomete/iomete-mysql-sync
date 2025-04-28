@@ -62,7 +62,7 @@ class SyncSingleConfig:
 
         tables = [Table(name=tbl.TABLE_NAME, definition=tbl.TABLE_NAME) for tbl in source_tables]
 
-        self.lakehouse.execute(f"drop table if exists {information_tables_proxy_name}")
+        self.lakehouse.execute(f"DROP TABLE IF EXISTS {information_tables_proxy_name}")
 
         return tables
 
@@ -88,7 +88,7 @@ class SyncSingleConfig:
 
         if self.drop_proxy_table_after_migration:
             logger.debug(f"Cleaning up proxy table: {proxy_table_name}")
-            self.lakehouse.execute(f"DROP TABLE {proxy_table_name}")
+            self.lakehouse.execute(f"DROP TABLE IF EXISTS {proxy_table_name}")
 
         return current_rows_count
 

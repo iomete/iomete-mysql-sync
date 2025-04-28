@@ -10,7 +10,8 @@ class Lakehouse:
         self.db_name = db_name
 
     def proxy_table_name(self, table_name: str):
-        return f"{self.db_name}.__{table_name}_proxy"
+        return f"{table_name}_proxy"
+
 
     def staging_table_name(self, table_name: str):
         return f"{self.db_name}.{table_name}"
